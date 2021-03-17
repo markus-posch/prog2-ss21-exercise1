@@ -8,6 +8,22 @@ public class Result {
             if (grade < 38) {
                 gradesrounded.add(grade);
             }
+            else if ((grade%5) == 0){
+                gradesrounded.add(grade);
+            }
+            else if (grade % 5 > 3){
+                int newgrade = (grade%5) +1;
+                gradesrounded.add(newgrade);
+            }
+
+            else {
+                gradesrounded.add(grade);
+            }
+        }
+
+        return gradesrounded;
+
+    }
         }
         return gradesrounded;
     }
