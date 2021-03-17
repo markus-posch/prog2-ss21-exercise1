@@ -11,11 +11,14 @@ public class Result {
             else if ((grade%5) == 0){
                 gradesrounded.add(grade);
             }
-            else if (grade % 5 > 3){
-                int newgrade = (grade%5) +1;
+            else if (grade % 5 == 3){
+                int newgrade = grade + 2;
                 gradesrounded.add(newgrade);
             }
-
+            else if (grade % 5 == 4){
+                int newgrade = grade + 1;
+                gradesrounded.add(newgrade);
+            }
             else {
                 gradesrounded.add(grade);
             }
@@ -23,8 +26,5 @@ public class Result {
 
         return gradesrounded;
 
-    }
-        }
-        return gradesrounded;
     }
 }
