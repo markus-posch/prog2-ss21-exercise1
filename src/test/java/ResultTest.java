@@ -23,4 +23,21 @@ public class ResultTest {
 
         assertEquals(expected, actual,"Something went wrong with grades below 38");
     }
+
+    @Test
+    @DisplayName("Method gradingStudents: Grades should round up")
+    void testGradingsStudents_roundup(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(38,43,48,58,63,73,89,99,59,41));
+        List<Integer> expected = Arrays.asList(40,45,50,60,65,75,90,100,60,41);
+
+        assertEquals(expected, actual,"Grades didn't round up correctly");
+    }
+    @Test
+    @DisplayName("Method gradingStudents: Grades should stay same")
+    void testGradingsStudents_staysame(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(45,55,65,75,85,95));
+        List<Integer> expected = Arrays.asList(45,55,65,75,85,95);
+
+        assertEquals(expected, actual,"Grades should stay the same");
+    }
 }
