@@ -78,6 +78,13 @@ public class ResultTest {
         assertEquals(expected, actual,"Check your implementation of maximum Students");
     }
     @Test
+    @DisplayName("Method gradingStudents: Minus Students")
+    void testGradingsStudents_StudentsBelowLimit(){
+        List<Integer> actual = Result.gradingStudents(Collections.singletonList(-1));
+        List<Integer> expected = null;
+        assertEquals(expected, actual,"Check your implementation of maximum Students");
+    }
+    @Test
     @DisplayName("Method gradingStudents: More Students than grades")
     void testGradingsStudents_StudentsGrades(){
         List<Integer> actual = Result.gradingStudents(Arrays.asList(40,15,34));
