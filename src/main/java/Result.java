@@ -24,7 +24,8 @@ public class Result {
                         }
                         i++;
                     } else {
-                        gradesrounded = null;
+                        gradesrounded.add(null);
+                        i++;
                     }
                 }
             } else {
