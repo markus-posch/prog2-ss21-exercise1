@@ -33,8 +33,8 @@ public class ResultTest {
     @Test
     @DisplayName("Method gradingStudents: Grades should stay same")
     void testGradingsStudents_staysame(){
-        List<Integer> actual = Result.gradingStudents(Arrays.asList(6,45,55,65,75,85,95));
-        List<Integer> expected = Arrays.asList(45,55,65,75,85,95);
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(25,40,41,42,45,50,51,52,55,60,61,62,65,70,71,72,75,80,81,82,85,90,91,92,95,100));
+        List<Integer> expected = Arrays.asList(40,41,42,45,50,51,52,55,60,61,62,65,70,71,72,75,80,81,82,85,90,91,92,95,100);
         assertEquals(expected, actual,"Grades should stay the same");
     }
     @Test
