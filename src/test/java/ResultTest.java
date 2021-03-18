@@ -7,6 +7,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/*
+Github Repo Link:
+https://github.com/markus-posch/prog2-ss21-exercise1
+ */
+
 public class ResultTest {
     @BeforeAll
     static void init() {}
