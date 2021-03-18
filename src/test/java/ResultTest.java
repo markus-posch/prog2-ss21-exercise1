@@ -24,10 +24,10 @@ public class ResultTest {
     }
 
     @Test
-    @DisplayName("Method gradingStudents: Grades should round up")
+    @DisplayName("Method gradingStudents: all Grades should round up")
     void testGradingsStudents_roundup(){
-        List<Integer> actual = Result.gradingStudents(Arrays.asList(10,38,43,48,58,63,73,89,99,59,41));
-        List<Integer> expected = Arrays.asList(40,45,50,60,65,75,90,100,60,41);
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(26,38,39,43,44,48,49,53,54,58,59,63,64,68,69,73,74,78,79,83,84,88,89,93,94,98,99));
+        List<Integer> expected = Arrays.asList(40,40,45,45,50,50,55,55,60,60,65,65,70,70,75,75,80,80,85,85,90,90,95,95,100,100);
         assertEquals(expected, actual,"Grades didn't round up correctly");
     }
     @Test
@@ -78,5 +78,13 @@ public class ResultTest {
         List<Integer> actual = Result.gradingStudents(Arrays.asList(40,15,34));
         List<Integer> expected = null;
         assertEquals(expected, actual,"There are more Students than grades in List");
+    }
+
+    @Test
+    @DisplayName("Method gradingStudents: Grade out of Range 0 - 100")
+    void testGradingsStudents_GradesRange(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(5,20,44,150,-25,60));
+        List<Integer> expected = Arrays.asList(20,45,null,null,60);
+        assertEquals(expected, actual,"Check your implementation for Grades not between 0-100");
     }
 }
