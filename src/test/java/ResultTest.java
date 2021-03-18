@@ -58,6 +58,20 @@ public class ResultTest {
     void testGradingsStudents_ArrayNull(){
         List<Integer> actual = Result.gradingStudents(null);
         List<Integer> expected = null;
-        assertEquals(expected, actual,"Something went wrong with zero Students");
+        assertEquals(expected, actual,"List schould not be null");
+    }
+    @Test
+    @DisplayName("Method gradingStudents: 1 Student")
+    void testGradingsStudents_SingeStudent(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(1,73));
+        List<Integer> expected = Arrays.asList(75);
+        assertEquals(expected, actual,"Please check your minimum of Students");
+    }
+    @Test
+    @DisplayName("Method gradingStudents: More than 60 Students")
+    void testGradingsStudents_StudentsAboveLimit(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(65));
+        List<Integer> expected = null;
+        assertEquals(expected, actual,"Check your implementation of maximum Students");
     }
 }
