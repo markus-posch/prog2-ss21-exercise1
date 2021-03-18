@@ -5,7 +5,7 @@ public class Result {
     public static List<Integer> gradingStudents(List<Integer> grades) {
         List<Integer> gradesrounded = new ArrayList<>();
         if(grades != null) {
-            if (grades.get(0) >= 1 && grades.get(0) <= 60 && grades.size() > 1) {
+            if (grades.get(0) >= 1 && grades.get(0) <= 60 && grades.size() > 1 && grades.get(0) == grades.size()-1) {
                 int i = 1;
                 while (i <= grades.get(0)) {
                     if (grades.get(i) >= 0 && grades.get(i) <= 100) {
@@ -24,11 +24,11 @@ public class Result {
                         }
                         i++;
                     } else {
-                        System.out.println("Grade not in 0 to 100");
+                        gradesrounded = null;
                     }
                 }
             } else {
-                System.out.println("Number of Students incorrect");
+                gradesrounded = null;
             }
         }
         else {
