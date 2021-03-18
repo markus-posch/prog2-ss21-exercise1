@@ -53,4 +53,11 @@ public class ResultTest {
         List<Integer> expected = Collections.emptyList();
         assertEquals(expected, actual,"There should be no grades in the List");
     }
+    @Test
+    @DisplayName("Method gradingStudents: 60 Students")
+    void testGradingsStudents_ArrayNull(){
+        List<Integer> actual = Result.gradingStudents(null);
+        List<Integer> expected = null;
+        assertEquals(expected, actual,"Something went wrong with zero Students");
+    }
 }
