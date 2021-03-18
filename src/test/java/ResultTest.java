@@ -1,8 +1,6 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -43,14 +41,14 @@ public class ResultTest {
     @DisplayName("Method gradingStudents: Students == 0")
     void testGradingsStudents_numberStudents(){
         List<Integer> actual = Result.gradingStudents(Collections.singletonList(0));
-        List<Integer> expected = Collections.emptyList();
+        List<Integer> expected = null;
         assertEquals(expected, actual,"Something went wrong with zero Students");
     }
     @Test
     @DisplayName("Method gradingStudents: Students but no grades")
     void testGradingsStudents_numberStudents2(){
         List<Integer> actual = Result.gradingStudents(Collections.singletonList(17));
-        List<Integer> expected = Collections.emptyList();
+        List<Integer> expected = null;
         assertEquals(expected, actual,"There should be no grades in the List");
     }
     @Test
@@ -73,5 +71,12 @@ public class ResultTest {
         List<Integer> actual = Result.gradingStudents(Arrays.asList(65));
         List<Integer> expected = null;
         assertEquals(expected, actual,"Check your implementation of maximum Students");
+    }
+    @Test
+    @DisplayName("Method gradingStudents: More Students than grades")
+    void testGradingsStudents_StudentsGrades(){
+        List<Integer> actual = Result.gradingStudents(Arrays.asList(40,15,34));
+        List<Integer> expected = null;
+        assertEquals(expected, actual,"There are more Students than grades in List");
     }
 }
